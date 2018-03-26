@@ -20,7 +20,7 @@
   </licenses>
 
   <!-- jar包名字 -->
-  <name>mybatisplugin</name>
+  <name>${project.groupId}:${project.artifactId}</name>
   <!-- 项目地址 -->
   <url>https://github.com/MountCloud/mybatisplugin</url>
 
