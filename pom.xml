@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <!-- jar包详情 -->
-  <groupId>pers.zhs</groupId>
+  <groupId>org.mountcloud</groupId>
   <artifactId>mybatisplugin</artifactId>
   <version>1.0</version>
   <description>A collection of plugins</description>
@@ -28,7 +28,7 @@
   <developers>
     <developer>
       <name>zhanghaishan</name>
-      <email>crazyahai@163.com</email>
+      <email>moutcloud@outlook.com</email>
     </developer>
   </developers>
 

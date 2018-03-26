@@ -1,4 +1,4 @@
-package pers.zhs.mybatisplugin;
+package org.mountcloud.mybatisplugin;
 
 import org.mybatis.generator.api.IntrospectedTable;
 import org.mybatis.generator.api.PluginAdapter;
@@ -12,7 +12,7 @@ import static org.mybatis.generator.internal.util.StringUtility.stringHasValue;
 /**
  * 
 * @Title: MybatisExampleRootPlugin.java 
-* @Package com.coconet.common.util.mybatis 
+* @Package org.mountcloud.mybatisplugin
 * @Description: TODO 允许继承的插件
 * @author zhanghaishan
 * @date 2017年8月22日 下午5:03:57 

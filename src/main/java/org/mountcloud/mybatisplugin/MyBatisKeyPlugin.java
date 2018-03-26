@@ -1,4 +1,4 @@
-package pers.zhs.mybatisplugin;
+package org.mountcloud.mybatisplugin;
 
 import org.mybatis.generator.api.IntrospectedColumn;
 import org.mybatis.generator.api.IntrospectedTable;
@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * 
 * @Title: MyBatisKeyPlugin.java 
-* @Package com.coconet.common.util.mybatis 
+* @Package org.mountcloud.mybatisplugin
 * @Description: TODO Mysql主键优化插件
 * @author zhanghaishan
 * @date 2017年8月22日 下午5:04:11 

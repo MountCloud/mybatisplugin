@@ -1,4 +1,4 @@
-package pers.zhs.mybatisplugin;
+package org.mountcloud.mybatisplugin;
 
 import org.mybatis.generator.api.CommentGenerator;
 import org.mybatis.generator.api.IntrospectedTable;
@@ -17,7 +17,7 @@ import java.util.TreeSet;
 /**
  * 
 * @Title: MybatisGroupOrderPlugin.java 
-* @Package com.coconet.common.util.mybatis 
+* @Package org.mountcloud.mybatisplugin
 * @Description: TODO 用来给Mybatis添加group和order的插件,此插件会让Example添加一个group by属性和order by属性，并且会添加一个返回map（selectCustomByExample）的自定义查询
 * @author zhanghaishan
 * @date 2017年8月22日 下午2:03:18 

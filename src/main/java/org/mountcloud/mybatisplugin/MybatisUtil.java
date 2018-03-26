@@ -1,7 +1,7 @@
-package pers.zhs.mybatisplugin;
+package org.mountcloud.mybatisplugin;
 
-import com.ugirls.statisticalservice.common.util.ObjectUtil;
-import com.ugirls.statisticalservice.common.util.StringUtil;
+import org.mountcloud.mybatisplugin.utils.ObjectUtil;
+import org.mountcloud.mybatisplugin.utils.StringUtil;
 
 import java.beans.PropertyDescriptor;
 import java.lang.reflect.Field;
@@ -12,15 +12,19 @@ import java.util.List;
 /**
  * 
 * @Title: MybatisUtil.java 
-* @Package com.coconet.common.util.mybatis 
+* @Package org.mountcloud.mybatisplugin
 * @Description: TODO Mybatis工具类，可以自动设置Example等
 * @author zhanghaishan
 * @date 2017年8月22日 下午5:04:25 
 * @version V1.0
  */
 public class MybatisUtil {
-	
-	
+
+	/**
+	 * 自动填充查询参数
+	 * @param criteria
+	 * @param entity
+	 */
 	public static void setAutoExample(Object criteria,Object entity){
 		setAutoExample(criteria,entity,null);
 	}
