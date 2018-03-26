@@ -9,13 +9,9 @@ import org.mybatis.generator.api.dom.xml.XmlElement;
 import java.util.List;
 
 /**
- * 
-* @Title: MyBatisKeyPlugin.java 
-* @Package org.mountcloud.mybatisplugin
-* @Description: TODO Mysql主键优化插件
-* @author zhanghaishan
-* @date 2017年8月22日 下午5:04:11 
-* @version V1.0
+ * Mysql主键优化插件
+ * @author zhanghaishan
+ * @version V1.0
  */
 public class MyBatisKeyPlugin extends PluginAdapter {
 

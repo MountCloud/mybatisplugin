@@ -10,13 +10,9 @@ import java.util.List;
 import static org.mybatis.generator.internal.util.StringUtility.stringHasValue;
 
 /**
- * 
-* @Title: MybatisExampleRootPlugin.java 
-* @Package org.mountcloud.mybatisplugin
-* @Description: TODO 允许继承的插件
-* @author zhanghaishan
-* @date 2017年8月22日 下午5:03:57 
-* @version V1.0
+ * 允许继承的插件
+ * @author zhanghaishan
+ * @version V1.0
  */
 public class MybatisExampleRootPlugin extends PluginAdapter
 // =================================================

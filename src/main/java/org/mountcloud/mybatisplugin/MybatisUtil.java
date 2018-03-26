@@ -10,13 +10,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 
-* @Title: MybatisUtil.java 
-* @Package org.mountcloud.mybatisplugin
-* @Description: TODO Mybatis工具类，可以自动设置Example等
-* @author zhanghaishan
-* @date 2017年8月22日 下午5:04:25 
-* @version V1.0
+ * Mybatis工具类，可以自动设置Example等
+ * @author zhanghaishan
+ * @version V1.0
  */
 public class MybatisUtil {
 
@@ -28,7 +24,7 @@ public class MybatisUtil {
 	public static void setAutoExample(Object criteria,Object entity){
 		setAutoExample(criteria,entity,null);
 	}
-	
+
 	/***
 	 * 自动设置查询条件，查询函数为andXXEqualTo（也就是说是Equal）
 	 * @param criteria

@@ -15,13 +15,9 @@ import java.util.Set;
 import java.util.TreeSet;
 
 /**
- * 
-* @Title: MybatisGroupOrderPlugin.java 
-* @Package org.mountcloud.mybatisplugin
-* @Description: TODO 用来给Mybatis添加group和order的插件,此插件会让Example添加一个group by属性和order by属性，并且会添加一个返回map（selectCustomByExample）的自定义查询
-* @author zhanghaishan
-* @date 2017年8月22日 下午2:03:18 
-* @version V1.0
+ * 用来给Mybatis添加group和order的插件,此插件会让Example添加一个group by属性和order by属性，并且会添加一个返回map（selectCustomByExample）的自定义查询
+ * @author zhanghaishan
+ * @version V1.0
  */
 public class MybatisGroupOrderPlugin extends PluginAdapter{
 	@Override

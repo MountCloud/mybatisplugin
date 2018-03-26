@@ -8,20 +8,18 @@ import java.util.Map;
 import java.util.Set;
 
 /**
+ * 对象工具类
  * @author zhanghaishan
  * @version V1.0
- * @Package org.mountcloud.mybatisplugin.utils
- * @Description: TODO
- * @date 2018/1/24.
  */
 @SuppressWarnings("rawtypes")
 public class ObjectUtil {
 
     /**
      * 获取函数列表
-     * @param t
-     * @param methods
-     * @param index
+     * @param t object class
+     * @param methods added list
+     * @param index depth index
      */
     public static void getMethods(Class t, List<Method> methods, Integer index){
 
@@ -42,8 +40,8 @@ public class ObjectUtil {
 
     /**
      * 将map里的值更改为String类型
-     * @param map
-     * @return
+     * @param map replace map
+     * @return replace new map
      */
     @SuppressWarnings("unchecked")
 	public static Map mapValueToString(Map map){

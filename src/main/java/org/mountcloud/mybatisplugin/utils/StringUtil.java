@@ -8,15 +8,19 @@ import java.util.Set;
 /**
  * @author zhanghaishan
  * @version V1.0
- * @Package org.mountcloud.mybatisplugin.utils
- * @Description: TODO 字符串工具集
- * @date 2018/1/18.
  */
 public class StringUtil {
 
+    /**
+     * 转换工具
+     */
     private static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
-    //首字母转大写
+    /**
+     * 首字母转大写
+     * @param s
+     * @return
+     */
     public static String toUpperCaseFirstOne(String s){
         if(Character.isUpperCase(s.charAt(0))) {
             return s;
@@ -25,6 +29,11 @@ public class StringUtil {
         }
     }
 
+    /**
+     * Object to Integer
+     * @param obj replace Object
+     * @return success is Integer, fail is null
+     */
     public static Integer toInteger(Object obj){
         if(obj == null){
             return null;
@@ -32,6 +41,11 @@ public class StringUtil {
         return Integer.parseInt(obj.toString());
     }
 
+    /**
+     * Object to Float
+     * @param obj replace Object
+     * @return success is Float, fail is null
+     */
     public static Float toFloat(Object obj){
         if(obj == null){
             return null;
@@ -39,6 +53,11 @@ public class StringUtil {
         return Float.parseFloat(obj.toString());
     }
 
+    /**
+     * Object to Double
+     * @param obj replace Object
+     * @return success is Double, fail is null
+     */
     public static Double toDouble(Object obj){
         if(obj == null){
             return null;
@@ -46,6 +65,11 @@ public class StringUtil {
         return Double.parseDouble(obj.toString());
     }
 
+    /**
+     * Object to Long
+     * @param obj replace Object
+     * @return success is Long, fail is null
+     */
     public static Long toLong(Object obj){
         if(obj == null){
             return null;
@@ -53,6 +77,11 @@ public class StringUtil {
         return Long.parseLong(obj.toString());
     }
 
+    /**
+     * Object to Boolean
+     * @param obj replace Object
+     * @return success is Boolean, fail is null
+     */
     public static Boolean toBoolean(Object obj){
         if(obj == null){
             return null;
@@ -60,6 +89,11 @@ public class StringUtil {
         return Boolean.parseBoolean(obj.toString());
     }
 
+    /**
+     * Object to String
+     * @param obj replace Object
+     * @return success is String, fail is null
+     */
     public static String objToString(Object obj){
         if(obj == null){
             return null;
@@ -73,9 +107,9 @@ public class StringUtil {
 
     /**
      * 根据map替换
-     * @param str
-     * @param map
-     * @return
+     * @param str old string
+     * @param map replace prms,key is old str,value is new str
+     * @return new string
      */
     public static String replaceByMap(String str,Map<String,String> map){
         if(map!=null){
