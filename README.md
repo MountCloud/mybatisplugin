@@ -14,8 +14,6 @@ MybatisGroupOrderPlugin ：Automatic generation of grouping and sorting
 		<artifactId>mybatisplugin</artifactId>
 		<version>1.0</version>
 	</dependency>
-  
-<hr/>
 
 # Install
 	mvn install
