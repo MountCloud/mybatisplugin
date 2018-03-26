@@ -6,3 +6,11 @@ MyBatisKeyPlugin ：Primary key repair
 MybatisGroupOrderPlugin ：Automatic generation of grouping and sorting
 
 # Please keep an eye on the dynamics of this plugin^_^!
+
+You can install it by:
+mavn:
+<dependency>
+  <groupId>org.mountcloud</groupId>
+  <artifactId>mybatisplugin</artifactId>
+  <version>1.0</version>
+</dependency>
