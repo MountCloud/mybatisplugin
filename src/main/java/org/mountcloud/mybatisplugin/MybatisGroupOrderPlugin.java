@@ -1,5 +1,6 @@
 package org.mountcloud.mybatisplugin;
 
+import org.mountcloud.mybatisplugin.utils.MybatisPluginUtil;
 import org.mybatis.generator.api.CommentGenerator;
 import org.mybatis.generator.api.IntrospectedTable;
 import org.mybatis.generator.api.PluginAdapter;
@@ -33,9 +34,9 @@ public class MybatisGroupOrderPlugin extends PluginAdapter{
 	@Override
 	public boolean modelExampleClassGenerated(TopLevelClass topLevelClass, IntrospectedTable introspectedTable) {
 		
-		addExampleMethod(topLevelClass,introspectedTable,"groupBy",PrimitiveTypeWrapper.getStringInstance());//groupBy属性
-		
-		addExampleMethod(topLevelClass,introspectedTable,"columnCustom",PrimitiveTypeWrapper.getStringInstance());//自定义列
+		MybatisPluginUtil.addField(context,topLevelClass,introspectedTable,"groupBy",PrimitiveTypeWrapper.getStringInstance(),true);//groupBy属性
+
+		MybatisPluginUtil.addField(context,topLevelClass,introspectedTable,"columnCustom",PrimitiveTypeWrapper.getStringInstance(),true);//自定义列
 		
 		return super.modelExampleClassGenerated(topLevelClass, introspectedTable);
 	}
@@ -185,65 +186,5 @@ public class MybatisGroupOrderPlugin extends PluginAdapter{
 		
 		return super.clientGenerated(interfaze, topLevelClass, introspectedTable);
 	}
-	
-	/**
-	 * 
-	 * 为Example添加属性和封装
-	 * 
-	 * @param topLevelClass
-	 * @param introspectedTable
-	 * @param name
-	 * 
-	 */
-	private void addExampleMethod(TopLevelClass topLevelClass,IntrospectedTable introspectedTable, String name,FullyQualifiedJavaType javaType) {
-		
-		CommentGenerator commentGenerator = context.getCommentGenerator();
-		
-		/**
-		 * 创建成员变量
-		 * 如protected Integer limitStart;
-		 */
-		Field field = new Field();
-		field.setVisibility(JavaVisibility.PROTECTED);
-		field.setType(javaType);
-		field.setName(name);
-		commentGenerator.addFieldComment(field, introspectedTable);
-		topLevelClass.addField(field);
-		/**
-		 * 首字母大写
-		 */
-		char c = name.charAt(0);
-		String camel = Character.toUpperCase(c) + name.substring(1);
-
-		/**
-		 * 添加Setter方法
-		 */
-		Method method = new Method();
-		method.setVisibility(JavaVisibility.PUBLIC);
-		method.setName("set" + camel);
-		method.addParameter(new Parameter(javaType, name));
-
-		StringBuilder sb = new StringBuilder();
-		sb.append("this.");
-		sb.append(name);
-		sb.append(" = ");
-		sb.append(name);
-		sb.append(";");
-		/**
-		 * 如 this.limitStart = limitStart;
-		 */
-		method.addBodyLine(sb.toString());
-
-		commentGenerator.addGeneralMethodComment(method, introspectedTable);
-		topLevelClass.addMethod(method);
-
-		/**
-		 * 添加Getter Method 直接调用AbstractJavaGenerator的getGetter方法
-		 */
-		Method getterMethod = AbstractJavaGenerator.getGetter(field);
-		commentGenerator.addGeneralMethodComment(getterMethod,introspectedTable);
-		topLevelClass.addMethod(getterMethod);
-	}
-	
 
 }

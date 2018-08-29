@@ -2,10 +2,7 @@ package org.mountcloud.mybatisplugin.utils;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * 对象工具类
@@ -80,6 +77,25 @@ public class ObjectUtil {
             return;
         }
         getFields(t1, fields,index);
+    }
+
+    /**
+     * 查询属性
+     * @param cls 需要查询的类
+     * @param fieldName 属性名字
+     * @return
+     */
+    public static Field getField(Class<?> cls,String fieldName){
+        List<Field> fields = new ArrayList<Field>();
+        getFields(cls,fields,null);
+
+        for(int i=0;i<fields.size();i++){
+            Field field = fields.get(i);
+            if(field.getName().equals(fieldName)){
+                return field;
+            }
+        }
+        return null;
     }
 
 }
