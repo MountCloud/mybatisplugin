@@ -26,9 +26,9 @@ public class MybatisMySqlLimitPlugin extends PluginAdapter {
 
     /**
      * 添加limit Class 和 limit 属性
-     * @param topLevelClass
-     * @param introspectedTable
-     * @return
+     * @param topLevelClass 类
+     * @param introspectedTable 添加的项
+     * @return 添加结果
      */
     @Override
     public boolean modelExampleClassGenerated(TopLevelClass topLevelClass, IntrospectedTable introspectedTable) {
@@ -57,8 +57,8 @@ public class MybatisMySqlLimitPlugin extends PluginAdapter {
     /**
      * 为select添加limit
      * @param document 总xml
-     * @param introspectedTable
-     * @return
+     * @param introspectedTable 添加项
+     * @return 添加结果
      */
     @Override
     public boolean sqlMapDocumentGenerated(Document document, IntrospectedTable introspectedTable) {
@@ -92,7 +92,7 @@ public class MybatisMySqlLimitPlugin extends PluginAdapter {
 
     /**
      * 检查父类是否存在limit属性，并且limit是否存在start和size两个Integer或int属性
-     * @param topLevelClass
+     * @param topLevelClass 检查项
      */
     private boolean checkSuperClasslimit(TopLevelClass topLevelClass){
         FullyQualifiedJavaType fullyQualifiedJavaType = topLevelClass.getSuperClass();

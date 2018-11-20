@@ -18,8 +18,8 @@ public class StringUtil {
 
     /**
      * 首字母转大写
-     * @param s
-     * @return
+     * @param s 字符串
+     * @return 转换后的字符串
      */
     public static String toUpperCaseFirstOne(String s){
         if(Character.isUpperCase(s.charAt(0))) {

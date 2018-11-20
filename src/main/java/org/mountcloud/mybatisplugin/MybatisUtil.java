@@ -18,8 +18,8 @@ public class MybatisUtil {
 
 	/**
 	 * 自动填充查询参数
-	 * @param criteria
-	 * @param entity
+	 * @param criteria 查询辅助类
+	 * @param entity 实体
 	 */
 	public static void setAutoExample(Object criteria,Object entity){
 		setAutoExample(criteria,entity,null);
@@ -27,8 +27,8 @@ public class MybatisUtil {
 
 	/***
 	 * 自动设置查询条件，查询函数为andXXEqualTo（也就是说是Equal）
-	 * @param criteria
-	 * @param entity
+	 * @param criteria 查询辅助类
+	 * @param entity 实体
 	 */
 	public static void setAutoExample(Object criteria,Object entity,String ...likeAttr){
 		if(criteria==null||entity==null){

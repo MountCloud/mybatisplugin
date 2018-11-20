@@ -83,7 +83,7 @@ public class ObjectUtil {
      * 查询属性
      * @param cls 需要查询的类
      * @param fieldName 属性名字
-     * @return
+     * @return 查询到的属性
      */
     public static Field getField(Class<?> cls,String fieldName){
         List<Field> fields = new ArrayList<Field>();

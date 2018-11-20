@@ -23,13 +23,13 @@ import java.util.List;
 public class MybatisPluginUtil {
 
     /**
-     *
      * 为Example添加属性和封装
-     *
-     * @param topLevelClass
-     * @param introspectedTable
-     * @param name
-     *
+     * @param context 上下文
+     * @param topLevelClass topLevelClass
+     * @param introspectedTable introspectedTable
+     * @param name 属性名
+     * @param javaType 属性类
+     * @param packing 是否封装get set
      */
     public static void addField(Context context, TopLevelClass topLevelClass, IntrospectedTable introspectedTable, String name, FullyQualifiedJavaType javaType, boolean packing) {
 
@@ -86,13 +86,13 @@ public class MybatisPluginUtil {
     }
 
     /**
-     *
      * 为Example添加属性和封装
-     *
-     * @param topLevelClass
-     * @param introspectedTable
-     * @param name
-     *
+     * @param context 上下文
+     * @param innerClass 类
+     * @param introspectedTable introspectedTable
+     * @param name 属性名
+     * @param javaType java类型
+     * @param packing 是否生成getset
      */
     public static void addField(Context context, InnerClass innerClass, IntrospectedTable introspectedTable, String name, FullyQualifiedJavaType javaType, boolean packing) {
 
@@ -151,9 +151,9 @@ public class MybatisPluginUtil {
 
     /***
      * 查询element
-     * @param element
-     * @param name
-     * @return
+     * @param element xml元素
+     * @param name 名称
+     * @return 查询到的元素
      */
     public static List<XmlElement> getElement(XmlElement element, String name){
 
@@ -174,8 +174,9 @@ public class MybatisPluginUtil {
 
     /**
      * 查询attribute
-     * @param name
-     * @return
+     * @param xmlElement xml元素
+     * @param name 属性名
+     * @return 查询到的元素
      */
     public static Attribute getAttribute(XmlElement xmlElement,String name){
         List<Attribute> elementAttributes = xmlElement.getAttributes();
