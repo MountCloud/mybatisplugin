@@ -3,6 +3,9 @@ package org.mountcloud.mybatisplugin;
 import org.mybatis.generator.api.IntrospectedColumn;
 import org.mybatis.generator.api.IntrospectedTable;
 import org.mybatis.generator.api.PluginAdapter;
+import org.mybatis.generator.api.dom.java.Field;
+import org.mybatis.generator.api.dom.java.FullyQualifiedJavaType;
+import org.mybatis.generator.api.dom.java.TopLevelClass;
 import org.mybatis.generator.api.dom.xml.Attribute;
 import org.mybatis.generator.api.dom.xml.XmlElement;
 
@@ -23,10 +26,11 @@ public class MyBatisKeyPlugin extends PluginAdapter {
 		IntrospectedColumn columnIden = null;
 		if ((columns != null) && (columns.size() != 0)) {
 			for (IntrospectedColumn column : columns) {
-				if (("id".equals(column.getJavaProperty()))
-						&& ("INTEGER".equals(column.getJdbcTypeName()))) {
-					columnIden = column;
-					break;
+				if("id".equals(column.getJavaProperty())){
+					if("INTEGER".equals(column.getJdbcTypeName())||"BIGINT".equals(column.getJdbcTypeName())){
+						columnIden = column;
+						break;
+					}
 				}
 			}
 		}
@@ -36,6 +40,29 @@ public class MyBatisKeyPlugin extends PluginAdapter {
 					.getJavaProperty()));
 		}
 		return super.sqlMapInsertElementGenerated(element, introspectedTable);
+	}
+
+	@Override
+	public boolean sqlMapInsertSelectiveElementGenerated(XmlElement element, IntrospectedTable introspectedTable) {
+		List<IntrospectedColumn> columns = introspectedTable
+				.getPrimaryKeyColumns();
+		IntrospectedColumn columnIden = null;
+		if ((columns != null) && (columns.size() != 0)) {
+			for (IntrospectedColumn column : columns) {
+				if("id".equals(column.getJavaProperty())){
+					if("INTEGER".equals(column.getJdbcTypeName())||"BIGINT".equals(column.getJdbcTypeName())){
+						columnIden = column;
+						break;
+					}
+				}
+			}
+		}
+		if (columnIden != null) {
+			element.addAttribute(new Attribute("useGeneratedKeys", "true"));
+			element.addAttribute(new Attribute("keyProperty", columnIden
+					.getJavaProperty()));
+		}
+		return super.sqlMapInsertSelectiveElementGenerated(element, introspectedTable);
 	}
 
 	@Override
